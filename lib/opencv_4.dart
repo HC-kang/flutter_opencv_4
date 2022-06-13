@@ -638,6 +638,7 @@ class Cv2 {
     required double thresholdValue,
     required double maxThresholdValue,
     required int thresholdType,
+    Uint8List? fileData,
   }) async {
     /// Variable to store operation result
     final dynamic result = await ThresholdFactory.threshold(
@@ -646,6 +647,7 @@ class Cv2 {
       thresholdValue: thresholdValue,
       maxThresholdValue: maxThresholdValue,
       thresholdType: thresholdType,
+      fileData: fileData,
     );
 
     /// Function returns the response from method channel
