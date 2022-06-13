@@ -659,11 +659,13 @@ class Cv2 {
     CVPathFrom pathFrom = CVPathFrom.ASSETS,
     required String pathString,
     required int outputType,
+    Uint8List? fileData,
   }) async {
     final Uint8List? result = await CvtColorFactory.cvtColor(
       pathFrom: pathFrom,
       pathString: pathString,
       outputType: outputType,
+      fileData: fileData,
     );
 
     /// Function returns the response from method channel

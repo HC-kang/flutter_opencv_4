@@ -18,6 +18,7 @@ class CvtColorFactory {
     required CVPathFrom pathFrom,
     required String pathString,
     required int outputType,
+    Uint8List? fileData,
   }) async {
     File _file;
     Uint8List _fileAssets;
@@ -48,6 +49,14 @@ class CvtColorFactory {
           "pathType": 3,
           "pathString": '',
           "data": _fileAssets,
+          'outputType': outputType,
+        });
+        break;
+      case CVPathFrom.DIRECT:
+        result = await platform.invokeMethod('cvtColor', {
+          "pathType": 3,
+          "pathString": '',
+          "data": fileData,
           'outputType': outputType,
         });
         break;
